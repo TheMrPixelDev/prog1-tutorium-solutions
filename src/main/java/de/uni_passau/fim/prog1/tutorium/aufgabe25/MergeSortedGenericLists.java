@@ -1,10 +1,10 @@
-package de.uni_passau.fim.prog1.tutorium.aufgabe24;
+package de.uni_passau.fim.prog1.tutorium.aufgabe25;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import de.uni_passau.fim.prog1.tutorium.aufgabe23.MergeSortedIntegerLists;
+import de.uni_passau.fim.prog1.tutorium.aufgabe24.MergeSortedIntegerLists;
 
 /**
  * Erweitere die Methode aus {@link MergeSortedIntegerLists} um Generics. Die Listenelemente sollen das Interface
