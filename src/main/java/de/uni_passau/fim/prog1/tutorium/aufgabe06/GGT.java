@@ -49,6 +49,9 @@ public class GGT {
             System.out.println("Der größte gemeinsame Teiler von "
                     + outputA + " und " + outputB + " ist " + a + ".");
         }
+
+        System.out.println("(b) Rekursiv:\nDer größte gemeinsame Teiler von " +
+                + outputA + " und " + outputB + " ist " + ggTRecursive(outputA, outputB) + ".\"");
     }
 
     /**
@@ -66,5 +69,18 @@ public class GGT {
             }
         }
         return a;
+    }
+
+    /**
+     * Rekursiv
+     */
+    private static int ggTRecursive(int a, int b) {
+        if (b == 0) {
+            return a;
+        } else if (a > b) {
+            return ggTRecursive(a - b, b);
+        } else {
+            return ggTRecursive(a, b - a);
+        }
     }
 }

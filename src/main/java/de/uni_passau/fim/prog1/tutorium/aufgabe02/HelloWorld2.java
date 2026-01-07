@@ -9,9 +9,32 @@ package de.uni_passau.fim.prog1.tutorium.aufgabe02;
  */
 public class HelloWorld2 {
     public static void main(String[] args) {
-        // führe 100 mal aus.
+
+        System.out.println("Iterative: ");
+        iterative();
+
+        System.out.println("Recursive: ");
+        recursive(1);
+    }
+
+    /**
+     * Iterative method
+     */
+    private static void iterative() {
         for (int i = 1; i <= 100; i++) {
             System.out.println(i + " - Hello World!");
+        }
+    }
+
+    /**
+     * Recursive method
+     */
+    private static void recursive(int i) {
+        System.out.println(i + " - Hello World!");
+
+        // Abbruchbedingung
+        if (i < 100) {
+            recursive(i + 1);
         }
     }
 }
