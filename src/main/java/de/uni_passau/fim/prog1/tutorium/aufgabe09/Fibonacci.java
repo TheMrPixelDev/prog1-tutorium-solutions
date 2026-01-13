@@ -42,6 +42,11 @@ public class Fibonacci {
         int n = findFirstFibOver(0, maximum);
         System.out.println("Die erste Fibonacci-Zahl über " + maximum +
                 " ist die Fibonacci-Zahl von " + n + " und lautet " + fib(n) + ".");
+
+        // (c)
+        for (int j = 0; j <= 30; j++) {
+            System.out.println("Die Fibonacci-Zahl von " + j + " lautet " + fastFib(j) + ".");
+        }
     }
 
     /**
@@ -80,6 +85,26 @@ public class Fibonacci {
             return findFirstFibOver(n + 1, limit);
         } else {
             return n;
+        }
+    }
+
+    private static int fastFib(int n) {
+        int[] cache = new int[n+1];
+        return fibDynamic(n, cache);
+    }
+
+    private static int fibDynamic(int n, int[] cache) {
+        if (n == 0) {
+            return 0;
+        } else if (n == 1) {
+            return 1;
+        } else {
+            if (cache[n] != 0) {
+                return cache[n];
+            }
+            int newFib = fibDynamic(n - 1, cache) + fibDynamic(n - 2, cache);
+            cache[n] = newFib;
+            return newFib;
         }
     }
 }
