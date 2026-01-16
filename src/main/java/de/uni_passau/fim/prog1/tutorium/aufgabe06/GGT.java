@@ -3,42 +3,27 @@ package de.uni_passau.fim.prog1.tutorium.aufgabe06;
 import java.util.Random;
 
 /**
- * Erstelle ein Programm, welches den größten gemeinsamen Teiler (ggT) zweier Zahlen a und b
- * mithilfe des Euklidischen Algorithmus berechnet. Die Zahlen a und b sollen dabei mit
- * folgendem Programmcode zufällig bestimmt werden:
+ * Create a program that calculates the greatest common divisor of two numbers a and b
+ * using the Euclidean algorithm. The values for a and b can be randomly determined.
+ * This can be done with:
  * <code>int a = new Random().nextInt(100);</code>
  * <code>int b = new Random().nextInt(100);</code>
- * <p>
- * <p>
- * >Pseudocode des Euklidischen Algorithmus:
- * <code>
- * solange b != 0
- *    wenn a > b dann
- *      a = a − b
- *   sonst
- *      b = b − a
- * return a
- * </code>
- *
- * @author <a href="http://github.com/werli">Phil Werli</a>
  */
 public class GGT {
     public static void main(String[] args) {
         int a = new Random().nextInt(100);
         int b = new Random().nextInt(100);
 
-        // Lösung in eigener Methode
+        // Solution in a separate method
         int ggT = ggT(a, b);
-        System.out.println("Der größte gemeinsame Teiler von "
-                + a + " und " + b + " ist " + ggT + ".");
+        System.out.println("The greatest common divisor of "
+                + a + " and " + b + " is " + ggT + ".");
 
-        // Lösung in der main-Methode erfordert Zwischenspeichern von a und b.
+        // Solution in main method
         int outputA = a;
         int outputB = b;
 
-        // keine Division durch 0
         if (a != 0 && b != 0) {
-            // "solange b nicht 0 ist"
             while (b != 0) {
                 if (a > b) {
                     a = a - b;
@@ -46,21 +31,18 @@ public class GGT {
                     b = b - a;
                 }
             }
-            System.out.println("Der größte gemeinsame Teiler von "
+            System.out.println("The greatest common divisor of "
                     + outputA + " und " + outputB + " ist " + a + ".");
         }
 
-        System.out.println("(b) Rekursiv:\nDer größte gemeinsame Teiler von " +
-                + outputA + " und " + outputB + " ist " + ggTRecursive(outputA, outputB) + ".\"");
+        System.out.println("(b) Recursiv:\nThe greatest common divisor of " +
+                + outputA + " and " + outputB + " is " + ggTRecursive(outputA, outputB) + ".\"");
     }
 
     /**
-     * Gibt den größten gemeinsamen Teiler zweier Zahlen a und b zurück.
-     *
-     * @return den größten gemeinsamen Teiler zweier Zahlen.
+     * Gives back the greatest common divisor of a and b.
      */
     private static int ggT(int a, int b) {
-        // "solange b nicht 0 ist"
         while (b != 0) {
             if (a > b) {
                 a = a - b;
@@ -72,7 +54,7 @@ public class GGT {
     }
 
     /**
-     * Rekursiv
+     * Gives back the greatest common divisor of a and b recursively
      */
     private static int ggTRecursive(int a, int b) {
         if (b == 0) {

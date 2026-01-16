@@ -1,30 +1,28 @@
 package de.uni_passau.fim.prog1.tutorium.aufgabe05;
 
 /**
- * Erstelle ein Programm, welches die Zahlen 1 bis 100 zeilenweise auf der Konsole ausgibt.
- * Wenn die Zahl durch 3 teilbar ist, soll statt der Zahl selbst der String <code>foo</code> ausgegeben werden.
- * Wenn die Zahl durch 5 teilbar ist, soll statt der Zahl selbst der String <code>bar</code> ausgegeben werden.
- * Wenn die Zahl sowohl durch 3 als auch durch 5 teilbar ist, soll <code>foobar</code> ausgegeben werden.
- *
- * @author <a href="http://github.com/werli">Phil Werli</a>
+ * Create a program that outputs the numbers 1 to 100 line by line to the console. If the
+ * number is divisible by 3, instead of the number itself, the string foo should be output.
+ * If the number is divisible by 5, instead of the number itself, the string bar should be
+ * output. If the number is divisible by both 3 and 5, foobar should be output
  */
 public class Foobar {
 
     public static void main(String[] args) {
         for (int i = 1; i <= 100; i++) {
-            // Überprüfung ob i durch 3 UND 5 teilbar ist.
+            // Check if i is divisible by 3 AND 5
             if ((i % 3 == 0) && (i % 5 == 0)) {
                 System.out.println("foobar");
             }
-            // Überprüfung ob i durch 3 ist.
+            // Check if i is divisible by 3
             else if (i % 3 == 0) {
                 System.out.println("foo");
             }
-            // Überprüfung ob i durch 5 ist.
+            // Check if i is divisible by 5
             else if (i % 5 == 0) {
                 System.out.println("bar");
             }
-            // Nachdem die Zahl weder durch 3 noch durch 5 teilbar ist, muss das nicht mehr überprüft werden.
+            // No condition matches
             else {
                 System.out.println(i);
             }

@@ -1,11 +1,9 @@
 package de.uni_passau.fim.prog1.tutorium.aufgabe02;
 
 /**
- * Erstelle ein Programm, welches den Text “Hello World!” 100-mal auf der Konsole ausgibt.
- * Jedes “Hello World!” soll dabei in einer eigenen Zeile stehen. Jede Zeile soll mit
- * der entsprechenden Zeilennummer beginnen.
- *
- * @author <a href="http://github.com/werli">Phil Werli</a>
+ * Create a program that outputs the text "Hello World" 100 times to the console. Each
+ * "Hello World" should be on its own line. Each line should begin with the corresponding
+ * line number.
  */
 public class HelloWorld2 {
     public static void main(String[] args) {
@@ -32,7 +30,7 @@ public class HelloWorld2 {
     private static void recursive(int i) {
         System.out.println(i + " - Hello World!");
 
-        // Abbruchbedingung
+        // termination
         if (i < 100) {
             recursive(i + 1);
         }
