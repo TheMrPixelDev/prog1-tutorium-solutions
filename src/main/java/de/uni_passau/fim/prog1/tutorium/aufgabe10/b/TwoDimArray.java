@@ -1,17 +1,14 @@
 package de.uni_passau.fim.prog1.tutorium.aufgabe10.b;
 
 /**
- * (b) Modifiziere das Programm nun so, dass es ein zweidimensionales boolean-Array
- * der Größe 5 × 5 anstelle eines eindimensionalen Array auf der Konsole ausgibt.
- *
- * @author <a href="http://github.com/werli">Phil Werli</a>
+ * Modify the program to print a two-dimensional boolean array of size 5 × 5 instead
+ * of a one-dimensional array. The array can also be hardcoded here.
  */
 public class TwoDimArray {
 
     public static void main(String[] args) {
         /*
-        * Anlegen eines Arrays, das wiederum boolean Arrays beinhaltet.
-        * In diesen kann man dann boolean Werte speichern.
+        * Creating an array, which contains arrays which contain boolean values.
         */
         boolean[][] array = {
                 new boolean[]{true, false, true, false, true},
@@ -21,7 +18,7 @@ public class TwoDimArray {
                 new boolean[]{false, true, false, true, true}
         };
         /*
-        Alternative Deklaration.
+        alternative
         boolean[][] array = {
                 {true, false, true, false, true},
                 {true, true, false, true, false},
@@ -29,13 +26,14 @@ public class TwoDimArray {
                 {true, false, true, true, false},
                 {false, true, false, true, true}
         };
-        */
+         */
+
 
         /*
-         * Gibt das Array Zeile für Zeile, Spalte für Spalte aus.
+         * Gives back the array row by row, column by column
          */
         for (int row = 0; row < array.length; ++row) {
-            // array[row].length gibt die Anzahl der Spalten in der Zeile am Index row aus.
+            // array[row].length gives back the number of columns in the row of index row.
             for (int column = 0; column < array[row].length; ++column) {
                 if (array[row][column]) {
                     System.out.print('X');

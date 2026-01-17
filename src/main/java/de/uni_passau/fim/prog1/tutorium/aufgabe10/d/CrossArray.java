@@ -1,10 +1,10 @@
 package de.uni_passau.fim.prog1.tutorium.aufgabe10.d;
 
 /**
- * (d) Modifiziere das Programm nun so, dass es das Array so belegt, dass beide Diago-
- * nalen (von links oben nach rechts unten und von rechts oben nach links unten)
- * den Wert true und alle anderen Elemente den Wert false haben.
- * Beispielausgabe:
+ * (d) Modify the program so that it populates the array such that both diagonals (from
+ * top-left to bottom-right and from top-right to bottom-left) have the value true,
+ * and all other elements have the value false.
+ * Example output:
  * <code>
  * X 0 0 0 X
  * 0 X 0 X 0
@@ -13,20 +13,19 @@ package de.uni_passau.fim.prog1.tutorium.aufgabe10.d;
  * X 0 0 0 X
  * </code>
  * <p>
- * (e) Führe eine Variable size ein und modifiziere das Programm, sodass beliebig große
- * Arrays abhängig von size) belegt und ausgegeben werden können.
- *
- * @author <a href="http://github.com/werli">Phil Werli</a>
+ * (e) Introduce a variable size and modify the program so that arrays of arbitrary size
+ * (depending on size) can be populated and printed. The program should both
+ * create and print the array.
  */
 public class CrossArray {
     public static void main(String[] args) {
-        // Lösung aus Teilaufgabe (e). Garantiert ein quadratisches Array.
+        // Solution from subtask (e). Guarantees a square array.
         int size = 5;
         boolean[][] array = new boolean[size][size];
 
         /*
          * Idee:
-         * Die fallende Diagonale ist genau dann, wenn Index der Zeile gleich dem Index der Spalte ist.
+         * Idea: The falling diagonal occurs precisely when the row index is equal to the column index.
          *
          * [0][0],
          * [1][1],
@@ -35,7 +34,7 @@ public class CrossArray {
          * .
          * [array.length -1][array.length -1]
          *
-         * Die steigende Diagonale ist genau dann, wenn [Index der Zeile][(Länge des Arrays - 1) - Index der Zeile].
+         * The ascending diagonal is exactly when [index of the row][(length of the array - 1) - index of the row].
          *
          *
          * [0][(array.length-1)-0],
@@ -45,7 +44,7 @@ public class CrossArray {
          * .
          * [array.length-1][(array.length-1)-(array.length-1)],
          *
-         * Laufzeit: O(n^2).
+         * Runtime: O(n^2).
          */
         for (int row = 0; row < array.length; row++) {
             for (int column = 0; column < array[row].length; column++) {
@@ -77,9 +76,11 @@ public class CrossArray {
             array[i][(array.length - 1) - i] = true;
         }
 
-        // gibt das Array Zeile für Zeile, Spalte für Spalte aus
+        /*
+         * Gives back the array row by row, column by column
+         */
         for (int row = 0; row < array.length; ++row) {
-            // array[row].length gibt die Anzahl der Spalten in der Zeile row aus
+            // array[row].length gives back the number of columns in the row of index row.
             for (int column = 0; column < array[row].length; ++column) {
                 if (array[row][column]) {
                     System.out.print('X');
