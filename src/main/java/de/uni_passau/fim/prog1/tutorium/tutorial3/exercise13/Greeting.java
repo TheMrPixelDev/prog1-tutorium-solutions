@@ -1,4 +1,4 @@
-package de.uni_passau.fim.prog1.tutorium.aufgabe13.a;
+package de.uni_passau.fim.prog1.tutorium.tutorial3.exercise13;
 
 import java.io.BufferedReader;
 import java.io.IOException;

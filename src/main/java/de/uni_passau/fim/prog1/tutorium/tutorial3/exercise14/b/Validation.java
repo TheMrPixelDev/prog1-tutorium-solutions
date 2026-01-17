@@ -1,41 +1,38 @@
-package de.uni_passau.fim.prog1.tutorium.aufgabe13.c;
+package de.uni_passau.fim.prog1.tutorium.tutorial3.exercise14.b;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
 /**
- * Erweitere den Taschenrechner, sodass ungültige Eingaben (z.B. ein Buchstabe
- * statt einer Zahl oder Division durch 0) abgefangen werden.
- * <p>
- *
- * @author <a href="http://github.com/werli">Phil Werli</a>
+ * Validation: Extend the calculator to handle invalid inputs (e.g., a letter instead
+ * of a number). Hint : It might help to split your program into multiple methods.
  */
-public class Validierung {
+public class Validation {
 
     public static void main(String[] args) {
 
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
-        /* Um zu ermöglichen, dass der Reader das Programm nach einer fehlerhaten Eingabe nicht beendet, sondern
-         * weiteren Input annimmt, müssen die Lesevorgänge in einer while-Schleife untergebracht werden, die erst
-         * verlassen wird, sobald korrekter Input eingelesen wurde.
+        /* To enable the reader to continue accepting further input after an incorrect entry rather than terminating the program,
+         * the reading operations must be placed in a while loop, which is only
+         * exited once correct input has been read.
          */
         try {
             int num1 = 0;
             String operator = "";
             int num2 = 0;
 
-            // künstliche Schleifenbedingung
+            // artificial loop condition
             boolean success = false;
 
-            while (!success) { // gleichbedeutend mit while(success == false)
+            while (!success) { // same as while(success == false)
                 try {
                     String input = reader.readLine();
                     num1 = Integer.parseInt(input);
                     success = true;
                 } catch (NumberFormatException error) {
-                    System.out.println("Bitte eine Zahl eingeben!");
+                    System.out.println("Please insert a number");
                 }
             }
 
@@ -44,7 +41,7 @@ public class Validierung {
                 operator = reader.readLine();
 
                 /*
-                 * Alternative mit Regular Expressions.
+                 * Alternative with Regular Expressions.
                  * if (operator.matches("\\+|-|\\*|/")) {...}
                  */
                 if (operator.equals("+")
@@ -53,7 +50,7 @@ public class Validierung {
                         || operator.equals("/")) {
                     success = true;
                 } else {
-                    System.out.println("Bitte einen validen Operator eingeben!");
+                    System.out.println("Please insert a valid operand!");
                 }
             }
 
@@ -63,12 +60,12 @@ public class Validierung {
                     String input = reader.readLine();
                     num2 = Integer.parseInt(input);
                     if (operator.equals("/") && num2 == 0) {
-                        System.out.println("Division durch 0 ist nicht zulässig. Bitte eine andere Zahl eingeben.");
+                        System.out.println("Division by 0 is not allowed. Please enter another number.");
                         continue;
                     }
                     success = true;
                 } catch (NumberFormatException error) {
-                    System.out.println("Bitte eine Zahl eingeben!");
+                    System.out.println("Please insert a number!");
                 }
             }
 
@@ -84,7 +81,7 @@ public class Validierung {
                     result = num1 * num2;
                     break;
                 case "/":
-                    // Division durch 0 wurde schon behandelt.
+                    // Division by zero has already been covered.
                     result = num1 / num2;
                     break;
             }

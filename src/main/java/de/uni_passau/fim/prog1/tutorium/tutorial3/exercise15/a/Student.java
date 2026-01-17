@@ -1,14 +1,13 @@
-package de.uni_passau.fim.prog1.tutorium.aufgabe14.a;
+package de.uni_passau.fim.prog1.tutorium.tutorial3.exercise15.a;
 
 /**
- * Erstelle eine Klasse Student mit den Attributen Name, Vorname, Matrikelnummer, Studiengang und Fachsemester.
- * Erstelle anschließend ein Objekt der Klasse Student, mit den Eigenschaften, die auf dich selbst zutreffen.
- *
- * @author <a href="http://github.com/werli">Phil Werli</a>
+ * Create a class Student with the attributes name, first name, student ID, course of
+ * study, and semester. Then create an object of the class Student with properties
+ * that apply to yourself.
  */
 public class Student {
 
-    // Attribute eines Studierenden
+    // Attributes of a student
     private String name;
     private String firstName;
     private int studentID;
@@ -16,7 +15,7 @@ public class Student {
     private int semester;
 
     /**
-     * Konstruktor für ein Student-Object.
+     * Constructor of student-object.
      */
     public Student(String name, String firstName, int studentID, String courseOfStudy, int semester) {
         this.name = name;
@@ -27,11 +26,11 @@ public class Student {
     }
 
     public static void main(String[] args) {
-        // Erstellung eines Student Objekts durch Aufruf dessen Konstruktors mit den spezifizierten Parametern.
-        Student manuelneuer = new Student("Neuer", "Manuel", 11111, "Goalkeeping Master", 3);
+        // Creation of a Student object by calling its constructor with the specified parameters.
+        Student manuelNeuer = new Student("Neuer", "Manuel", 11111, "Goalkeeping Master", 3);
     }
 
-    // Getter und Setter-Methoden, da die Variablen private sind.
+    // Getter and Setter-methods, because the variables are private
 
     public String getFirstName() {
         return firstName;

@@ -1,4 +1,4 @@
-package de.uni_passau.fim.prog1.tutorium.aufgabe13.b;
+package de.uni_passau.fim.prog1.tutorium.tutorial3.exercise14.a;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -6,21 +6,19 @@ import java.io.InputStreamReader;
 import java.util.Scanner;
 
 /**
- * Schreibe ein Programm, welches zunächst eine Zahl (ganzzahlig), dann eine Rechenoperation (+,−,∗,/)
- * und dann erneut eine Zahl einliest.
- * Dabei soll jede Eingabe in einer eigenen Zeile eingelesen werden.
- * Das Programm soll dann das Ergebnis der Rechenoperation ausgeben.
+ * Write a program that first reads a number (integer), then a mathematical operation (+,−,∗,/)
+ * and then another number.
+ * Each input should be read on a separate line.
+ * The program should then output the result of the mathematical operation.
  * <p>
  * <p>
- * In dieser Lösung ist die Umsetzung mit einen {@link BufferedReader} in der {@link #main(String[])}-Methode
- * und mit einem {@link Scanner} in der {@link #calcWithScanner()}-Methode.
- *
- * @author <a href="http://github.com/werli">Phil Werli</a>
+ * In this solution, the implementation uses a {@link BufferedReader} in the {@link #main(String[])} method
+ * and a {@link Scanner} in the {@link #calcWithScanner()} method.
  */
-public class Taschenrechner {
+public class Calculator {
 
     public static void main(String[] args) {
-        Taschenrechner calc = new Taschenrechner();
+        Calculator calc = new Calculator();
         System.out.println("Calculator using the BufferedReader:");
         calc.calcWithBufferedReader();
     }
@@ -29,8 +27,8 @@ public class Taschenrechner {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
         /*
-         * Lesevorgang und Speichern der Eingaben in drei Strings. Der Lesevorgang könnte eine IOException zur
-         * Folge haben, der diesmal in einem try / catch Block behandelt wird.
+         * Reading and storing the input in three strings. The reading process could result in an IOException,
+         * which is handled in a try/catch block this time.
          */
         try {
             String input1 = reader.readLine();
@@ -38,15 +36,15 @@ public class Taschenrechner {
             String input2 = reader.readLine();
 
             /*
-             * Der BufferedReader liest einen String ein, den ihr erst in eine Zahl umwandeln ("parsen") müsst, um
-             * mit ihr rechnen zu können. Dafür verwendet man beispielsweise Integer.parseInt(String input).
+             * The BufferedReader reads a string that you first have to convert (“parse”) into a number in order to
+             * be able to calculate with it. To do this, you can use Integer.parseInt(String input), for example.
              */
             int num1 = Integer.parseInt(input1);
             int num2 = Integer.parseInt(input2);
 
             /*
-             * Wichtig: Strings müssen mit der {@link String#equals(Object)} Methode verglichen werden. Der
-             * Operator '==' vergleicht die Objekt-Referenzwerte, nicht den tatsächlichen Inhalt der Objekte.
+             * Important: Strings must be compared using the {@link String#equals(Object)} method. The
+             * ‘==’ operator compares the object reference values, not the actual content of the objects.
              */
             String output = "";
             if (operator.equals("+")) {
@@ -57,7 +55,7 @@ public class Taschenrechner {
 
             } else if (operator.equals("*")) {
                 output = num1 + " " + operator + " " + num2 + " = " + (num1 * num2);
-            } else if (operator.equals("/")) {// Sonderfall: Division durch 0.
+            } else if (operator.equals("/")) {//Division by 0.
                 if (num2 != 0) {
                     output = num1 + " " + operator + " " + num2 + " = " + (num1 / num2);
                 }
@@ -68,9 +66,9 @@ public class Taschenrechner {
             System.err.println("Error while reading input.");
         } finally {
             /*
-             *  Nach dem Lesevorgang solltet ihr den BufferedReader schließen, um unerwünschte Seiteneffekte zu vermeiden.
-             *  Um sicherzustellen, dass der BufferedReader auf jeden Fall geschlossen wird, schließen wir den reader in
-             *  einem finally-Block. Dieser wird selbst dann ausgeführt, wenn im try-Block eine Exception geworfen wurde.
+             *  After reading, you should close the BufferedReader to avoid unwanted side effects.
+             *  To ensure that the BufferedReader is closed in any case, we close the reader in
+             *  a finally block. This is executed even if an exception was thrown in the try block.
              */
             try {
                 reader.close();
@@ -81,11 +79,11 @@ public class Taschenrechner {
     }
 
     /**
-     * Alternative Lösung mit Scanner.
-     * Statt eine eingelesene Zahl manuel von String in eine Zahl umzuwandeln, kann man
-     * die Methode {@link Scanner#nextInt()} nutzen, die das für einen übernimmt und direkt einen int-Wert zurückgibt.
+     * Alternative solution with Scanner.
+     * Instead of manually converting a scanned number from a string to a number, you can
+     * use the {@link Scanner#nextInt()} method, which does this for you and returns an int value directly.
      * <p>
-     * Zusätzlich wird in dieser Lösung ein switch Statement für die Überprüfung des Operators verwendet.
+     * In addition, this solution uses a switch statement to check the operator.
      */
     private void calcWithScanner() {
         Scanner scanner = new Scanner(new InputStreamReader(System.in));
@@ -95,8 +93,8 @@ public class Taschenrechner {
         int num2 = 0;
 
         /*
-         * Scanner.hasNext() gibt zurück, ob der Scanner überhaupt eine Eingabe erhalten hat.
-         * Wenn das nicht der Fall ist, 'wartet' der Scanner auf den nächsten Input.
+         * Scanner.hasNext() returns whether the scanner has received any input at all.
+         * If this is not the case, the scanner ‘waits’ for the next input.
          */
         if (scanner.hasNext()) {
             num1 = scanner.nextInt();
@@ -109,9 +107,9 @@ public class Taschenrechner {
         }
 
         /*
-         * Switch Statement überprüft bei Strings den 'Inhalt' und nicht die Objektreferenz.
+         * Switch statements check the ‘content’ of strings, not the object reference.
          *
-         * Aus der Java-Dokumentation (https://docs.oracle.com/javase/tutorial/java/nutsandbolts/switch.html):
+         * From the Java documentation (https://docs.oracle.com/javase/tutorial/java/nutsandbolts/switch.html):
          * The String in the switch expression is compared with the expressions associated with each case
          * label as if the String.equals method were being used.
          */
@@ -127,7 +125,7 @@ public class Taschenrechner {
                 result = num1 * num2;
                 break;
             case "/":
-                // Sonderfall: Division durch 0.
+                // Division by 0
                 if (num2 != 0) {
                     result = num1 / num2;
                 }
