@@ -1,8 +1,7 @@
 package de.uni_passau.fim.prog1.tutorium.tutorial3.exercise17.c;
 
 /**
- * Modifiziere MyList und MyNode, sodass statt Strings der Typ
- * generisch festgelegt werden kann.
+ * Modify MyList and MyNode in order to support generic values.
  *
  * @author <a href=https://github.com/werli>Phil Werli<a/>
  */

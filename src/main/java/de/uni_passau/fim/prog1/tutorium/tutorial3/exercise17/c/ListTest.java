@@ -1,8 +1,7 @@
 package de.uni_passau.fim.prog1.tutorium.tutorial3.exercise17.c;
 
 /**
- * Erstelle zum Testen eine MyList vom Typ String sowie eine MyList vom Typ
- * Integer und fülle beide mit beliebigen Werten.
+ * For testing create a MyList of the string and one of the integer and fill them up with some values.
  *
  * @author <a href=https://github.com/werli>Phil Werli<a/>
  */

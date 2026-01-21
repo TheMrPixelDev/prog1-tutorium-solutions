@@ -1,8 +1,7 @@
 package de.uni_passau.fim.prog1.tutorium.tutorial3.exercise17.c;
 
 /**
- * Modifiziere MyList und MyNode, sodass statt Strings der Typ
- * generisch festgelegt werden kann.
+ * Modify MyList and MyNode is order to allow for generic types.
  *
  * @author <a href=https://github.com/werli>Phil Werli<a/>
  */
@@ -12,9 +11,9 @@ public class MyList<E> {
     private int size;
 
     /**
-     * Fügt einen übergebenen Wert hinten an die Liste an.
+     * Appends a value to the list.
      *
-     * @param value Wert, welcher hinten an die Liste hinzugefügt wird.
+     * @param value which will be appended to the list.
      */
     public void add(E value) {
         if (value == null) {
@@ -37,18 +36,16 @@ public class MyList<E> {
     }
 
     /**
-     * Fügt einen neuen Wert an der übergebenen Position hinzu. Verschiebt das
-     * Element an der Position und alle nachfolgenden Elemente nach rechts. Ist
-     * die Position größer als die momentane Anzahl an Listenelementen, soll
-     * eine {@link IndexOutOfBoundsException} geworfen werden.
+     * Inserts a value at the given position inside the list. All following elements will be of index i + 1.
+     * If the position is greater than the lists size an {@link IndexOutOfBoundsException} will be thrown.
      *
-     * @param value Wert, welcher hinzugefügt wird.
-     * @param pos   Position, an welche der Wert hinzugefügt wird.
-     * @throws IndexOutOfBoundsException Wenn die übergebene Position {@code < 0} oder {@code > size()} ist.
+     * @param value value which will be returned.
+     * @param pos   position at which the value will be inserted.
+     * @throws IndexOutOfBoundsException when the position is {@code < 0} or {@code > size()}.
      */
     public void add(E value, int pos) throws IndexOutOfBoundsException {
         if (pos < 0 || pos > size) {
-            throw new IndexOutOfBoundsException("Übergebene Position außerhalb des erwarteten Raumes.");
+            throw new IndexOutOfBoundsException("Position is out of bounds.");
         } else if (pos == 0) {
             final MyNode<E> newFront = new MyNode<>(value);
             newFront.setNext(front);
@@ -68,10 +65,10 @@ public class MyList<E> {
     }
 
     /**
-     * Gibt den Wert an der übergebenen Position zurück.
+     * Returns the value at the given position.
      *
-     * @param pos Position, deren Wert zurückgegeben wird.
-     * @return Wert an der übergebenen Position
+     * @param pos position of the value
+     * @return value at the given position
      */
     public E get(int pos) {
         if (pos >= size) {
@@ -86,27 +83,25 @@ public class MyList<E> {
     }
 
     /**
-     * Gibt die Anzahl der Listenelemente zurück.
+     * Returns the amount of elements in the list.
      *
-     * @return Anzal der Listenelemente.
+     * @return amount of list elements.
      */
     public int size() {
         return size;
     }
 
     /**
-     * Gibt zurück, ob die Liste leer oder nicht leer ist.
+     * Returns whether the list is empty.
      *
-     * @return {@code true} bei leerer Liste, {@code false}
-     * bei nicht-leerer Liste.
+     * @return {@code true} if list is empty otherwise returns {@code false}
      */
     public boolean isEmpty() {
         return front == null;
     }
 
     /**
-     * Gibt die Listenelemente mit folgender Syntax
-     * auf der Konsole aus:
+     * Prints the elements of in the list as follows
      * <p>
      * {@code [element_0>,<element_1>,...,<element_n-1>,<element_n>]}
      */
@@ -133,11 +128,11 @@ public class MyList<E> {
     }
 
     /**
-     * Entfernt den Knoten an der übergebenen Position.
+     * Removes the node at the given position.
      *
-     * @param pos Position des zu löschenden Knotens.
-     * @return {@code true} bei erfolgreichem Löschen,
-     * {@code false} bei erfolglosem Löschen.
+     * @param pos position of the node which will be deleted.
+     * @return {@code true} if deletion was successful.
+     * Returns {@code false} otherwise.
      */
     public boolean remove(int pos) {
         if (pos < 0 || pos >= size) {
