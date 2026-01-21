@@ -1,10 +1,10 @@
 package de.uni_passau.fim.prog1.tutorium.tutorial4.exercise22;
 
 /**
- * Schreibe eine Methode mirrorArray, die ein übergebenes zweidimensionales Array an der
- * Vertikalen spiegelt. Die Zeilen der Matrix können dabei unterschiedliche Längen haben.
- * In diesem Fall soll jede Zeile jeweils in ihrer Mitte gespiegelt werden.
- * Beispiel:
+ * Write a method mirrorArray which mirrors a two-dimensional array at its vertical axes.
+ * The rows of the matrix might be of different length. In this case every individual row should be mirrored
+ * along its center.
+ * Example:
  * <blockquote><pre>
  * 3            3
  * 0 5          5 0
@@ -34,11 +34,11 @@ public class MirrorArray {
     }
 
     /**
-     * Spiegelt den Inhalt des gegebenes Array an der vertikalen Linie.
+     * Mirrors the content of the given array at its vertical axes.
      * <p>
-     * Man muss kein Array zurückgeben, da das Array durch Call-by-Reference verändert wird.
+     * The array must not be returned, since the array will be referentially modified (Call-by-Reference).
      *
-     * @param array das gegebene Array, das gespiegelt wird.
+     * @param array the array which will be mirrored
      */
     private static void mirrorArray(int[][] array) {
         for (int row = 0; row < array.length; row++) {
