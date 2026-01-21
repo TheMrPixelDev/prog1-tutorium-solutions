@@ -1,16 +1,15 @@
 package de.uni_passau.fim.prog1.tutorium.tutorial4.exercise18;
 
 /**
- * Schreibe eine Methode decimalToBinay, die eine übergebene natürliche Zahl iterativ in
- * eine Binärzahl (als String) konvertiert und zurückgibt. Der Zahlenbereich für die überge-
- * bene Zahl umfasst alle positiven Zahlen, die durch den Datentyp int dargestellt werden
- * können.
- * Hinweis: Du kannst das folgende Stück Code verwenden, um die Potenz c = a b zu berechnen:
+ * Write a method called decimalToBinary which iteratively converts a decimal number into its binary representation.
+ * The number can be any which int is able to represent.
+ *
+ * Hint: You can use the following code in order to compute a to the power of b
  * int c = Math.pow ( a , b ) ;
- * Beispiel: Math.pow(2, 5) entspricht 2 5 und liefert 32 zurück.
- * Beispiel: Der Aufruf decimalToBinay(42) liefert den String "101010" zurück.
+ * Example: Math.pow(2, 5) equals 2 to the power of 5 and returns 32.
+ * Example: The call decimalToBinay(42) returns "101010".
  * <p>
- * WICHTIG: für diese Aufgabe gibt es viele Lösungsvarianten!
+ * IMPORTANT: this task has a wide variety of possible solutions!
  *
  * @author <a href="http://github.com/werli">Phil Werli</a>
  */
@@ -24,10 +23,10 @@ public class DecimalToBinary {
     }
 
     /**
-     * Gibt die Binärdarstellung einer gegebenen Zahl in Form eines String zurück.
+     * Returns the binary representation of a given number as string.
      *
-     * @param number die gegebene Zahl, deren Binärdarstellung zurückgegeben wird.
-     * @return die Binärdarstellung einer gegebenen Zahl.
+     * @param number the number whose binary representation will be computed
+     * @return the binary representation of the number as string
      */
     private static String decimalToBinary(int number) {
         String output = "";
@@ -44,10 +43,10 @@ public class DecimalToBinary {
     }
 
     /**
-     * Gibt die Binärdarstellung einer gegebenen Zahl in Form eines String zurück.
+     * Returns the binary representation of a given number as string.
      *
-     * @param number die gegebene Zahl, deren Binärdarstellung zurückgegeben wird.
-     * @return die Binärdarstellung einer gegebenen Zahl.
+     * @param number the number whose binary representation will be computed
+     * @return the binary representation of the number as string
      */
     private static String decimalToBinaryWithPow(int number) {
         String output = "";
@@ -70,10 +69,10 @@ public class DecimalToBinary {
     }
 
     /**
-     * Gibt die Binärdarstellung einer gegebenen Zahl in Form eines String zurück.
+     * Returns the binary representation of a given number as string.
      *
-     * @param number die gegebene Zahl, deren Binärdarstellung zurückgegeben wird.
-     * @return die Binärdarstellung einer gegebenen Zahl.
+     * @param number the number whose binary representation will be computed
+     * @return the binary representation of the number as string
      */
     private static String decimalToBinaryWithToBinaryString(int number) {
         // ruft die statische Methode toBinaryString(int i) in der Klasse Integer / Long auf.
