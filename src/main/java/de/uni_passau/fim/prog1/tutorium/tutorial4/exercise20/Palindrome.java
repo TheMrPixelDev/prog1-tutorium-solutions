@@ -1,11 +1,11 @@
 package de.uni_passau.fim.prog1.tutorium.tutorial4.exercise20;
 
 /**
- * Erstelle eine Methode isPalindrom, welche für ein übergebenes char-Array prüft, ob es
- * sich um ein Palindrom handelt. Falls ja, soll die Methode true zurückgeben, sonst false.
- * Ein Palindrom ist ein Wort, welches gleich bleibt, wenn man es rückwärts liest.
+ * Create a method isPalindrom which checks whether a given char-Array contains a palindrom.
+ * Returns true if the given array contains a palindrom.
+ * A palindrom is a word which does not change if you reverse it.
  * <p>
- * Beispiele: otto, maoam, rentner, asdffdsa, foooof
+ * Example: otto, maoam, rentner, asdffdsa, foooof
  *
  * @author <a href="http://github.com/werli">Phil Werli</a>
  */
