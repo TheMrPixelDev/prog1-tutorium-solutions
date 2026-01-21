@@ -1,10 +1,10 @@
 package de.uni_passau.fim.prog1.tutorium.tutorial4.exercise21;
 
 /**
- * Erstelle eine Methode diagonalProductSum, die für ein übergebenes zweidimensionales
- * quadratisches Array zunächst das Produkt über die beiden Diagonalen bildet und diese
- * dann aufaddiert. Das Ergebnis soll zurückgegeben werden. Falls ein Eintrag der Matrix
- * den Wert 0 hat, so soll dieser übersprungen werden.
+ * Create a method diagonalProductSum which will be passed a two dimensional quadratic array.
+ * The methods should compute the product between the numbers on both diagonals and sum those up afterwards.
+ * In case the content of a cell is zero it will be skipped.
+ *
  * <p>
  * <blockquote><pre>
  * 3, 8, 3, 4, 1
@@ -30,13 +30,12 @@ public class DiagonalProductSum {
     }
 
     /**
-     * Berechnet für ein übergebenes zweidimensionales quadratisches Array das Produkt einmal der fallenden
-     * und einmal der steigenden Diagonale. Die Summe der beiden Produkte wird dann zurückgegeben.
+     * Computes the sum of the products of the elements on the diagonals of the array.
      * <p>
-     * Falls ein Eintrag der Matrix den Wert 0 hat, wird dieser übersprungen, da sonst das ganze Produkt 0 ist.
+     * In case the content of cell is null it will be skipped since the product would then result in zero.
      *
-     * @param array das übergebene zweidimensionale Array.
-     * @return die Summe der Produkte der fallenden und steigenden Diagonale.
+     * @param array the two-dimensional array
+     * @return the sum of the two products of the diagonals.
      */
     private static int diagSum(int[][] array) {
         // neutrales Element bei der Multiplikation ist 1
