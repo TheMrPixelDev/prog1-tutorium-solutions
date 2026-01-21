@@ -7,10 +7,10 @@ import java.util.List;
 import de.uni_passau.fim.prog1.tutorium.tutorial5.exercise25.MergeSortedIntegerLists;
 
 /**
- * Erweitere die Methode aus {@link MergeSortedIntegerLists} um Generics. Die Listenelemente sollen das Interface
- * {@link Comparable} implementieren. Schaue auf der
- * <a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/Comparable.html">Dokumentationseite</a>,
- * wie dir die Methoden des Interfaces bei der Sortierung helfen können.
+ * Extend the method of {@link MergeSortedIntegerLists} so it supports generics. The list elements should implement the
+ * interface {@link Comparable}. Visit
+ * <a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/Comparable.html">Documentation</a>,
+ * in order to find out how the interface can be used to sort elements.
  *
  * @author <a href="https://github.com/werli">Phil Werli<a/>
  */
@@ -31,12 +31,12 @@ public class MergeSortedGenericLists {
     }
 
     /**
-     * Fügt zwei übergebene sortierte Listen zu einer sortierten Liste zusammen und gibt diese zurück.
+     * Merges the two lists from the parameters into a sorted list and returns it.
      *
-     * @param first  die erste Liste.
-     * @param second die zweite Liste.
-     * @param <T>    Der Typ der zu sortierenden Listenelemente. Muss {@link Comparable} implementieren.
-     * @return eine sortierte Liste, die aus den Elementen der beiden übergebenen Listen besteht.
+     * @param first  first list.
+     * @param second second list.
+     * @param <T>    The type of the list elements. Must implement {@link Comparable}.
+     * @return a sorted list consisting of the elements of the two lists from the parameters.
      */
     @SuppressWarnings("Duplicates")
     private static <T extends Comparable<T>> List<T> mergeSortedGenericLists(final List<T> first, final List<T> second) {
