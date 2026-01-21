@@ -1,7 +1,7 @@
 package de.uni_passau.fim.prog1.tutorium.tutorial5.exercise23;
 
 /**
- * Diese Klasse repräsentiert eine Ziege, welche
+ * This class represents the goat which can life on a meadow.
  */
 public class Goat {
     private int currentRow;

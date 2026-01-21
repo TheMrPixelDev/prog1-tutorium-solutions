@@ -3,25 +3,23 @@ package de.uni_passau.fim.prog1.tutorium.tutorial5.exercise23;
 import java.util.Random;
 
 /**
- * Bitte bedenke: Dies ist nur ein Lösungvorschlag der Tutoren.
+ * Please mind: This is just a solution recommend by the tutors.
  *
- * <p>Alte Klausuraufgabe: Goat Life.
- * Die genaue Angabe ist auf dem Tutoriumsblatt 5 Aufgabe 22 gegeben.
+ * <p>Task from a previous exam: Goat Life.
  */
 public class Meadow {
     /**
-     * Die Größe der Wiese.
+     * Size of the meadow.
      */
     private static final int MEADOW_SIZE = 5;
 
     /**
-     * Ein Random Number Generator, welcher (wie der Name schon suggeriert) zufällige Zahlen
-     * generieren kann.
+     * Random Number Generator, which generates random numbers as the name implies.
      */
     private final Random rng;
 
     /**
-     * Die Ziege, die auf der Wiese lebt. Sie ist sehr hungrig.
+     * The goat on the meadow which is pretty hungry.
      */
     private final Goat goat;
 
@@ -31,7 +29,7 @@ public class Meadow {
     private final int[][] meadow;
 
     /**
-     * Konstruiert die Wiese.
+     * Constructs the meadow.
      */
     public Meadow() {
         rng = new Random();
@@ -40,12 +38,12 @@ public class Meadow {
     }
 
     /**
-     * Initialisiert die Wiese und die einzelnen Zellen. Jede Zelle hat eine zufällige Grashöhe
-     * zwischen 1 und 10.
+     * Initializes the meadow and its cells. Each cell contains a random number between 1 and 10 which represents the
+     * height of the grass.
      *
-     * @param width Die Breite der Wiese
-     * @param height Die Höhe der Wiese
-     * @return eine Wiese welche Zellen zufällig langes Gras haben
+     * @param width width of the meadow
+     * @param height height of the meadow
+     * @return a randomly generated meadow
      */
     private int[][] rMeadow(int width, int height) {
         int[][] meadow = new int[height][width];
@@ -58,8 +56,8 @@ public class Meadow {
     }
 
     /**
-     * Simuliert einen Tag der Ziege auf dieser Wiese. Die Ziege kann verhungern, wenn die Wiese
-     * kein Gras mehr hat. Genauere Regeln stehen auf der Angabe.
+     * Simulates a single day in the life of the goat on the meadow. The goat can starve if the height of the grass
+     * is not sufficient anymore. The precise rules are described in the exercise.
      */
     public void nextDay() {
         int goatRow = goat.getCurrentRow();
