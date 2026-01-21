@@ -5,11 +5,11 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
- * Erstelle eine Methode {@link #mergeSortedIntegerLists(List, List) mergeSortedIntegerLists(List<Integer>, List<Integer>)}
- * welche zwei sortierte Listen als Parameter nimmt und eine
- * zusammengefügte sortierte Liste zurückgibt. Ist eine der beiden übergebenen Listen leer,
- * wird die andere ausgegeben. Bedenke, dass die Listen unterschiedliche Länge haben kön-
- * nen. Beispiel: ([1,3,5,7,8],[2,4,6,9,10]) => [1,2,3,4,5,6,7,8,9,10]
+ * Create a method {@link #mergeSortedIntegerLists(List, List) mergeSortedIntegerLists(List<Integer>, List<Integer>)}
+ * which takes two sorted lists as parameters and returns a merged (also sorted) list.
+ * If one of the two lists is empty the other one will be printed.
+ * Please mind that both list most not be of the same size.
+ * Example: ([1,3,5,7,8],[2,4,6,9,10]) => [1,2,3,4,5,6,7,8,9,10]
  *
  * @author <a href="https://github.com/werli">Phil Werli<a/>
  */
@@ -23,11 +23,11 @@ public class MergeSortedIntegerLists {
     }
 
     /**
-     * Fügt zwei übergebene sortierte Listen zu einer sortierten Liste zusammen und gibt diese zurück.
+     * Merges two lists from the parameters into a sorted list and returns is.
      *
-     * @param first die erste Liste.
-     * @param second die zweite Liste.
-     * @return eine sortierte Liste, die aus den Elementen der beiden übergebenen Listen besteht.
+     * @param first first list.
+     * @param second second list.
+     * @return a sorted list which consists of the elements from the two lists from the parameters.
      */
     @SuppressWarnings("Duplicates")
     private static List<Integer> mergeSortedIntegerLists(final List<Integer> first, final List<Integer> second) {
