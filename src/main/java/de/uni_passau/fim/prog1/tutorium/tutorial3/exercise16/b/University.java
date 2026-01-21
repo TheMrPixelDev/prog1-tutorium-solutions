@@ -7,12 +7,11 @@ import java.io.InputStreamReader;
 import de.uni_passau.fim.prog1.tutorium.tutorial3.exercise16.a.Student;
 
 /**
- * Erweitere das Programm, sodass im Konstruktor der Klasse University die Daten von (beliebig vielen) Studierenden
- * von der Konsole eingelesen werden. Verwende die Eingabe fertig bzw. weiter um nach einer vollständigen Eingabe das
- * Einlesen zu beenden bzw. weitere Studierende hinzuzufügen.
- * Nach dem Einlesen sollen alle Studierende auf der Konsole ausgegeben werden.
+ * Extend you program so the constructor can read any amount of students from the console. Use the strings "finished" and
+ * "continue" to indicate whether you are finished reading students.
+ * All students should be printed to console after reading them.
  * <p>
- * Hier benutzen wir der Einfachheit halber die {@link Student}-Klasse von auf Aufgabe 15a.
+ * In order to not repeat ourselfs we will reuse the {@link Student}-class from exercise 16a.
  *
  * @author <a href="http://github.com/werli">Phil Werli</a>
  */
@@ -23,9 +22,8 @@ public class University {
     private Student[] arrayOfStudents;
 
     /**
-     * Konstruktor zum Erstellen eines neuen University-Objects. Hier ist es sinnvoll, eine neue Universität direkt
-     * mit der Gesamtzahl der Studierenden anzulegen, da diese für die Größe des Arrays verwendet werden kann.
-     * Die Studierenden selbst werden erst später "immatrikuliert"
+     * Constuctor for creating a University-object. It would make sense to prefill the array with empty student object
+     * whose attributes will be set later.
      *
      * @param maxNumberOfStudents Anzahl der Studierenden.
      */
@@ -41,7 +39,7 @@ public class University {
     }
 
     /**
-     * Methode zum Hinzufügen neuer Studierenden über die Konsole.
+     * Method for adding new students using the console.
      */
     private void addStudents() {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
@@ -53,15 +51,15 @@ public class University {
          */
         while (!quit && numberOfStudents < arrayOfStudents.length) {
             try {
-                System.out.print("Vorname: ");
+                System.out.print("firstname: ");
                 String firstName = reader.readLine();
-                System.out.print("Nachname: ");
+                System.out.print("lastname: ");
                 String name = reader.readLine();
-                System.out.print("Matrikelnummer: ");
+                System.out.print("student id: ");
                 int matrNr = Integer.parseInt(reader.readLine());
-                System.out.print("Studiengang: ");
+                System.out.print("field of study: ");
                 String studyCourse = reader.readLine();
-                System.out.print("Fachsemester: ");
+                System.out.print("semester: ");
                 int semester = Integer.parseInt(reader.readLine());
 
                 arrayOfStudents[numberOfStudents] = new Student(name, firstName, matrNr,
@@ -70,14 +68,14 @@ public class University {
 
                 if (numberOfStudents < arrayOfStudents.length) {
                     // Do not display this line the very last time
-                    System.out.print("Weiter? (weiter/fertig): ");
+                    System.out.print("Continue? (continue/finished): ");
 
-                    if (!(reader.readLine().equals("weiter"))) {
+                    if (!(reader.readLine().equals("continue"))) {
                         quit = true;
                     }
                 }
             } catch (IOException error) {
-                System.out.println("Fehler beim Einlesen.");
+                System.out.println("Error reading student.");
             }
         }
     }
@@ -86,7 +84,7 @@ public class University {
      * Diese Methode gibt alle Studierende auf der Konsole aus.
      */
     private void printStudents() {
-        System.out.println("Liste an Studierenden:");
+        System.out.println("List of students:");
         // Durchgehen und Ausgeben aller Studierenden
         for (int i = 0; i < numberOfStudents; i++) {
             System.out.println(arrayOfStudents[i].toString());

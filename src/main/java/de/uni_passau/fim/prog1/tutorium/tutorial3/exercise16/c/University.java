@@ -23,9 +23,8 @@ public class University {
     private Student[] arrayOfStudents;
 
     /**
-     * Konstruktor zum erstellen eines neuen University-Objects. Hier ist es sinnvoll, eine neue Universität direkt
-     * mit der Gesamtzahl der Studierenden anzulegen, da diese für die Größe des Arrays verwendet werden kann.
-     * Die Studierenden selbst werden erst später "immatrikuliert"
+     * Constuctor for creating a University-object. It would make sense to prefill the array with empty student object
+     * whose attributes will be set later.
      *
      * @param maxNumberOfStudents Anzahl der Studierenden.
      */
@@ -41,7 +40,7 @@ public class University {
     }
 
     /**
-     * Methode zum Hinzufügen neuer Studierenden über die Konsole.
+     * Method for adding new students using the console.
      */
     private void addStudents() {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
@@ -54,19 +53,19 @@ public class University {
          */
         while (!quit && numberOfStudents < arrayOfStudents.length) {
             try {
-                System.out.print("Vorname: ");
+                System.out.print("firstname: ");
                 String firstName = reader.readLine();
 
-                System.out.print("Nachname: ");
+                System.out.print("lastname: ");
                 String name = reader.readLine();
 
-                System.out.print("Matrikelnummer: ");
+                System.out.print("student id: ");
                 int matrNr = readInteger(reader);
 
-                System.out.print("Studiengang: ");
+                System.out.print("field of study: ");
                 String studyCourse = reader.readLine();
 
-                System.out.print("Fachsemester: ");
+                System.out.print("semester: ");
                 int semester = readInteger(reader);
 
                 arrayOfStudents[numberOfStudents] = new Student(name, firstName, matrNr,
@@ -75,17 +74,17 @@ public class University {
 
                 quit = validateContinue(reader, numberOfStudents);
             } catch (IOException error) {
-                System.out.println("Fehler beim Einlesen.");
+                System.out.println("Error reading student.");
             }
         }
 
     }
 
     /**
-     * Liest einen String ein und wandelt ihn in einen Integer um ("parsen").
+     * Ready a string and converts it into an integer (also called "parsing").
      *
-     * @return Eine Zahl, die eingelesen wurde.
-     * @throws IOException Wirft eine IOException, wenn der Input fehlschlägt.
+     * @return A number which was read.
+     * @throws IOException Throws an IOException if input failed.
      */
     private int readInteger(BufferedReader reader) throws IOException {
         int number = 0;
@@ -98,37 +97,35 @@ public class University {
                 }
                 success = true;
             } catch (NumberFormatException error) {
-                System.out.println("Bitte eine Zahl eingeben!");
+                System.out.println("Please type a number!");
             } catch (IllegalArgumentException error) {
-                System.out.println("Es muss eine positive Zahl eingegeben werden!");
+                System.out.println("The number must be positiv!");
             }
         }
         return number;
     }
 
     /**
-     * Validiert, ob das Programm weiter laufen soll.
-     * Wenn 'weiter' als Input kommt, ist das Ergebnis true.
-     * Ansonsten ist das Ergebnis false.
+     * Validates whether the programm should continue running.
      *
-     * @return ob das Programm weiter läuft.
-     * @throws IOException Wirft eine IOException, wenn der Input fehlschlägt.
+     * @return whether the programm should continue
+     * @throws IOException Trows an IOException if input failed.
      */
     private boolean validateContinue(BufferedReader reader, int counter) throws IOException {
         boolean quit = false;
         boolean success = false;
         if (counter < arrayOfStudents.length) {
             // Do not display this line the very last time.
-            System.out.print("Weiter? (weiter/fertig): ");
+            System.out.print("Continue? (continue/finished): ");
             while (!success) {
                 String input = reader.readLine();
-                if (input.equals("weiter")) {
+                if (input.equals("continue")) {
                     success = true;
-                } else if (input.equals("fertig")) {
+                } else if (input.equals("finished")) {
                     success = true;
                     quit = true;
                 } else {
-                    System.out.println("Bitte entweder 'weiter' oder 'fertig' eingeben.");
+                    System.out.println("Please either type 'continue' or 'finished'.");
                 }
             }
         }
@@ -136,7 +133,7 @@ public class University {
     }
 
     /**
-     * Methode zum Ausgeben der Studierenden auf der Konsole.
+     * Method for printing the students to the console.
      */
     private void printStudents() {
         System.out.println("Liste an Studierenden:");

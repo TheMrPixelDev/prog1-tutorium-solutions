@@ -1,7 +1,7 @@
 package de.uni_passau.fim.prog1.tutorium.tutorial3.exercise16.a;
 
 /**
- * Diese Klasse repräsentiert einen Studierenden und enthält alle notwenidigen Attribute.
+ * This class represents a student and its required attributes.
  *
  * @author <a href="http://github.com/werli">Phil Werli</a>
  */
@@ -26,13 +26,13 @@ public class Student {
     }
 
     /**
-     * toString-Methode der Student-Klasse
+     * toString method if this class.
      *
-     * @return String-Repräsentation des Student-Objekts.
+     * @return string-representation of a student object.
      */
     @Override
     public String toString() {
-        return name + ", " + firstName + " studiert " + courseOfStudy + " im " + semester + ". Semester.";
+        return name + ", " + firstName + " studies " + courseOfStudy + " in his/her/they " + semester + ". semester.";
     }
 
     // Getter und Setter-Methoden, da die Variablen private sind.

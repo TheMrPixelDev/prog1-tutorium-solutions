@@ -1,10 +1,10 @@
 package de.uni_passau.fim.prog1.tutorium.tutorial3.exercise16.a;
 
 /**
- * Erstelle eine Klasse University und eine Klasse Student (äquivalent Aufgabe 14(b)).
- * Die Klasse University soll eine Variable numberOfStudents und ein Array von Student Objekten haben.
- * Füge mindestens 3 Student-Objekte zum Array hinzu und schreibe eine Methode printStudents,
- * die alle Studierenden auf der Konsole ausgibt.
+ * Create a class University and a class Student (equivalent to exercise 14(b))
+ * The class University should contain a variable numberOfStudents and an Array of student object.
+ * Add at least 3 Student-Objekte to the array and create a method printStudents
+ * which prints all student object of the array to console.
  * <p>
  *
  * @author <a href="http://github.com/werli">Phil Werli</a>
@@ -16,9 +16,8 @@ public class University {
     private Student[] arrayOfStudents;
 
     /**
-     * Konstruktor zum Erstellen eines neuen University Objekts. Hier ist es sinnvoll, eine neue Universität direkt
-     * mit der Gesamtzahl der Studierenden anzulegen, da diese für die Größe des Arrays verwendet werden kann.
-     * Die Studierenden selbst werden erst später "immatrikuliert".
+     * Constuctor for creating a University-object. It would make sense to prefill the array with empty student object
+     * whose attributes will be set later.
      *
      * @param maxNumberOfStudents Anzahl der Studierenden.
      */
@@ -39,7 +38,7 @@ public class University {
     }
 
     /**
-     * Methode zum Ausgeben der Studierenden auf der Konsole.
+     * Method ot print the students on the console.
      */
     private void printStudents() {
         System.out.println("List of students:");
@@ -50,7 +49,7 @@ public class University {
 
     }
 
-    // Getter und Setter-Methoden, da die Variablen private sind.
+    // Getter und Setter-methods, since attributes are private.
     public int getNumberOfStudents() {
         return numberOfStudents;
     }
