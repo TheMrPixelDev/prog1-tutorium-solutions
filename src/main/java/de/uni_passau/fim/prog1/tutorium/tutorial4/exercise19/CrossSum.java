@@ -1,10 +1,9 @@
 package de.uni_passau.fim.prog1.tutorium.tutorial4.exercise19;
 
 /**
- * Erstelle eine Methode crossSum, die für eine übergebene natürliche Zahl deren Quersumme
- * berechnet und auf der Konsole ausgibt.
+ * Create a method crossSum which computes the cross sum of a given number and prints it to the console.
  * <blockquote><pre>
- * Beispiel: Quersumme von 232 : 2 + 3 + 2 = 7
+ * Example: cross sum of 232 : 2 + 3 + 2 = 7
  * </pre></blockquote>
  *
  * @author <a href="http://github.com/werli">Phil Werli</a>
@@ -19,10 +18,10 @@ public class CrossSum {
     }
 
     /**
-     * Berechnet für eine gegebene Zahl die Quersumme aus und gibt diese zurück.
+     * Computes the cross sum for the passed number and returns it.
      *
-     * @param number Die gegebene Zahl, deren Quersumme berechnet wird.
-     * @return die Quersumme der gegebenen Zahl.
+     * @param number the number whose cross sum will be computes
+     * @return the cross sum itself
      */
     private static int crossSum(int number) {
         int sum = 0;
@@ -34,11 +33,11 @@ public class CrossSum {
     }
 
     /**
-     * Berechnet für eine gegebene Zahl die Quersumme, indem die Zahl in ein Array von Charactern aufgeteilt und diese
-     * Werte dann nacheinander wieder in Strings und dann in Zahlen umgewandelt und zur Summe hinzuaddiert werden.
+     * Computes the cross sum by splitting up the number into an array of characters the number consists of in order
+     * to sum those up step-by-step.
      *
-     * @param number Die gegebene Zahl, deren Quersumme berechnet wird.
-     * @return die Quersumme der gegebenen Zahl.
+     * @param number the number whose cross sum will be computed
+     * @return the cross sum itself
      */
     private static int crossSumWithChars(int number) {
         int sum = 0;
